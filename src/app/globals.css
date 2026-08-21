@@ -87,7 +87,8 @@
   }
 
   a,
-  button {
+  button,
+  summary {
     @apply v-focus-ring;
   }
 
@@ -119,6 +120,36 @@
 
   @variant md {
     @apply overflow-x-visible overflow-y-scroll;
+  }
+}
+
+@utility v-disclosure {
+  interpolate-size: allow-keywords;
+
+  &::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height 300ms ease,
+      content-visibility 300ms allow-discrete;
+  }
+
+  &[open]::details-content {
+    height: auto;
+  }
+
+  @variant motion-reduce {
+    &::details-content {
+      transition: none;
+    }
+  }
+}
+
+@utility v-summary {
+  @apply cursor-pointer list-none;
+
+  &::-webkit-details-marker {
+    display: none;
   }
 }
 

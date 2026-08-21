@@ -69,6 +69,14 @@ Documented and left as designed:
   the design file and its drawn position lands on the heading at mobile.
 - On mobile, panel-one arrows are anchored to the bottom of their photo rather than to its top,
   so the arrowhead keeps sitting on the photo's edge as the photo narrows below 375px.
+- The FAQ chevron is `#FCB72B` on `#F2F5F9`, 1.61:1. Left as drawn: it is non-text, the rows are
+  native `<details>` so the state is exposed programmatically, and the answer appearing carries
+  the same information visually.
+- The value badges put `#495567` on `#FCB72B` at 4.31:1. That is below the 4.5:1 body threshold
+  but the numerals are 24px bold, so 3:1 applies and they clear it.
+- The design shows one FAQ row open per group. Built as independent disclosures rather than an
+  exclusive accordion, so opening one answer never hides another; the first row of each group
+  ships open to match the drawn state.
 - Focus rings and the reduced-motion path are not in the design file.
 - The Frontend Mentor attribution makes the mobile footer taller than the 438px drawn.
 
