@@ -55,10 +55,6 @@
   --text-badge--line-height: 1.2;
   --text-badge--letter-spacing: var(--tracking-display);
 
-  --text-badge-note: 0.625rem;
-  --text-badge-note--line-height: 1.5;
-  --text-badge-note--letter-spacing: var(--tracking-display);
-
   --text-link: 1.125rem;
   --text-link--line-height: calc(25 / 18);
 
@@ -76,6 +72,10 @@
 @layer base {
   html {
     overflow-y: scroll;
+
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
   }
 
   body {
@@ -103,9 +103,46 @@
 }
 
 @utility v-page {
-  @apply mx-auto w-full max-w-page px-8;
+  @apply mx-auto w-full px-8;
+
+  max-width: calc(var(--container-page) + 2 * --spacing(8));
 
   @variant md {
     @apply px-10;
+
+    max-width: calc(var(--container-page) + 2 * --spacing(10));
+  }
+}
+
+@utility v-scroll-lock {
+  @apply overflow-hidden;
+
+  @variant md {
+    @apply overflow-x-visible overflow-y-scroll;
+  }
+}
+
+@utility v-btn {
+  @apply inline-flex w-45 items-center justify-center border-3 border-yellow bg-yellow py-2.75 font-display text-body font-bold text-navy-deep transition-colors duration-200;
+
+  &:hover {
+    @apply bg-transparent;
+  }
+
+  @variant motion-reduce {
+    @apply transition-none;
+  }
+}
+
+@utility v-badge {
+  @apply inline-flex items-center rounded bg-light-grey font-display font-bold tracking-display text-navy;
+
+  font-size: calc(var(--text-badge) * 0.714);
+  height: 2.8em;
+  padding-inline: 0.8em;
+  gap: 0.6em;
+
+  @variant lg {
+    font-size: var(--text-badge);
   }
 }

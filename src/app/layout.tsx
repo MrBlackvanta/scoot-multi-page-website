@@ -1,4 +1,5 @@
 import { RouteTransitions } from "@/components/effects";
+import { SiteFooter, SiteHeader } from "@/components/layout";
 import type { Metadata, Viewport } from "next";
 import { Lexend_Deca, Space_Mono } from "next/font/google";
 
@@ -59,7 +60,9 @@ export default function RootLayout({
     >
       <body className="flex min-h-dvh flex-col">
         <RouteTransitions />
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

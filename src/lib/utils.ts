@@ -17,7 +17,6 @@ const twMerge = extendTailwindMerge({
             "item",
             "pin-label",
             "badge",
-            "badge-note",
             "link",
             "body",
           ],
