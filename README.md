@@ -57,7 +57,19 @@ Documented and left as designed:
 - The hero's yellow connector arrow is drawn from 1280px up. It is 452px wide and needs the gap
   the 1440px frame leaves between the text column and the white circles; narrower than that it
   would cross the paragraph or the circles, so the desktop hero drops it rather than move it.
-- Focus rings, the current-page nav state and the reduced-motion path are not in the design file.
+- **A hovered header nav link is `#FCB72B` on white in the design, which is 1.76:1.** It is left
+  as drawn; the same yellow clears AA on the dark footer and drawer (6.53:1), so only the header
+  is affected, and only while the pointer is on the link.
+- The design has no current-page nav state. Added one, coloured per backdrop so each clears AA:
+  `#333A44` on the white header (11.48:1), `#FCB72B` on the dark footer and drawer (6.53:1).
+- The story panels' yellow connector arrows are hand-placed in the design, at a different offset
+  per panel and per breakpoint. Two are moved: the home page's middle arrow sits 32px higher, or
+  its long leg crosses "Coming to a city near you" once the heading wraps below 1100px; and the
+  About page's first arrow follows the home page's placement, because that group is mirrored in
+  the design file and its drawn position lands on the heading at mobile.
+- On mobile, panel-one arrows are anchored to the bottom of their photo rather than to its top,
+  so the arrowhead keeps sitting on the photo's edge as the photo narrows below 375px.
+- Focus rings and the reduced-motion path are not in the design file.
 - The Frontend Mentor attribution makes the mobile footer taller than the 438px drawn.
 
 ## Author
