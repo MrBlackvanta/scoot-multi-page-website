@@ -1,13 +1,9 @@
 import type { StaticImageData } from "next/image";
 
-export type Crop = { src: StaticImageData; src2x: StaticImageData };
-
-const srcSet = ({ src, src2x }: Crop) => `${src.src} 1x, ${src2x.src} 2x`;
-
 type Props = {
-  mobile: Crop;
-  tablet?: Crop;
-  desktop?: Crop;
+  mobile: StaticImageData;
+  tablet?: StaticImageData;
+  desktop?: StaticImageData;
   alt: string;
 } & Omit<React.ComponentPropsWithoutRef<"img">, "src" | "srcSet" | "alt">;
 
@@ -20,16 +16,13 @@ export default function Picture({
 }: Props) {
   return (
     <picture className="contents">
-      {desktop && (
-        <source media="(min-width: 76rem)" srcSet={srcSet(desktop)} />
-      )}
-      {tablet && <source media="(min-width: 40rem)" srcSet={srcSet(tablet)} />}
+      {desktop && <source media="(width >= 64rem)" srcSet={desktop.src} />}
+      {tablet && <source media="(width >= 48rem)" srcSet={tablet.src} />}
       <img
-        src={mobile.src.src}
-        srcSet={srcSet(mobile)}
+        src={mobile.src}
         alt={alt}
-        width={mobile.src.width}
-        height={mobile.src.height}
+        width={mobile.width}
+        height={mobile.height}
         {...img}
       />
     </picture>

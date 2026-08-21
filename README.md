@@ -54,6 +54,9 @@ Documented and left as designed:
   no information is carried by colour alone.
 - Tablet drops the map labels to 13px while mobile and desktop use 24px. Proportional to the
   map, and it clears 4.5:1.
+- The hero's yellow connector arrow is drawn from 1280px up. It is 452px wide and needs the gap
+  the 1440px frame leaves between the text column and the white circles; narrower than that it
+  would cross the paragraph or the circles, so the desktop hero drops it rather than move it.
 - Focus rings, the current-page nav state and the reduced-motion path are not in the design file.
 - The Frontend Mentor attribution makes the mobile footer taller than the 438px drawn.
 
