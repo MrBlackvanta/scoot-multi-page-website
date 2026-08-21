@@ -34,7 +34,28 @@ This is a solution to the [Scoot multi-page website challenge on Frontend Mentor
 
 ### Design deviations
 
-_Recorded as the build proceeds._
+Accessibility fixes, each the smallest change that clears WCAG AA. Ratios measured by
+compositing on rounded 8-bit channels against the real backdrop.
+
+| Element | Design | Shipped | Ratio |
+| --- | --- | --- | --- |
+| Body copy, header nav | `#939CAA` on white | `#6C7789` | 2.77 -> 4.53 |
+| Footer nav links | `#939CAA` on `#333A44` | `#9AA3B0` | 4.14 -> 4.50 |
+| Button label, tablet map pills | white on `#FCB72B` | `#333A44` | 1.76 -> 6.53 |
+| Button hover label | `#FCB72B` on white | `#333A44` | 1.76 -> 11.48 |
+
+Yellow-on-white cannot be fixed without turning the brand colour brown, so the button's
+hover keeps the yellow border and swaps only the fill.
+
+Documented and left as designed:
+
+- The yellow button fill against the white page is 1.76:1 and the yellow map dots against the
+  light-grey map are 1.48:1. Both are non-text; every city name is real text beside its dot, so
+  no information is carried by colour alone.
+- Tablet drops the map labels to 13px while mobile and desktop use 24px. Proportional to the
+  map, and it clears 4.5:1.
+- Focus rings, the current-page nav state and the reduced-motion path are not in the design file.
+- The Frontend Mentor attribution makes the mobile footer taller than the 438px drawn.
 
 ## Author
 
