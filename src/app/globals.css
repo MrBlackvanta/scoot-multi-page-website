@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@source not "../../*.md";
+
+@theme {
+  --color-yellow: #fcb72b;
+  --color-navy: #495567;
+  --color-navy-deep: #333a44;
+  --color-light-grey: #e5ecf4;
+  --color-snow: #f2f5f9;
+  --color-light-yellow: #fff4df;
+  --color-pin: #f6faff;
+  --color-veil: #2f3b59;
+  --color-muted: #6c7789;
+  --color-muted-inverse: #9aa3b0;
+
+  --tracking-display: -0.04464em;
+
+  --text-hero: 3.5rem;
+  --text-hero--line-height: 1;
+  --text-hero--letter-spacing: var(--tracking-display);
+
+  --text-hero-sm: 2.5rem;
+  --text-hero-sm--line-height: 1;
+  --text-hero-sm--letter-spacing: var(--tracking-display);
+
+  --text-section: 3rem;
+  --text-section--line-height: 1;
+  --text-section--letter-spacing: var(--tracking-display);
+
+  --text-section-sm: 2rem;
+  --text-section-sm--line-height: 1;
+  --text-section-sm--letter-spacing: var(--tracking-display);
+
+  --text-group: 2.5rem;
+  --text-group--line-height: 1.2;
+  --text-group--letter-spacing: var(--tracking-display);
+
+  --text-card: 1.5rem;
+  --text-card--line-height: calc(28 / 24);
+  --text-card--letter-spacing: var(--tracking-display);
+
+  --text-card-sm: 1.25rem;
+  --text-card-sm--line-height: 1.4;
+  --text-card-sm--letter-spacing: var(--tracking-display);
+
+  --text-item: 1.125rem;
+  --text-item--line-height: calc(4 / 3);
+  --text-item--letter-spacing: var(--tracking-display);
+
+  --text-pin-label: 0.8125rem;
+  --text-pin-label--line-height: calc(28 / 13);
+  --text-pin-label--letter-spacing: var(--tracking-display);
+
+  --text-badge: 1.25rem;
+  --text-badge--line-height: 1.2;
+  --text-badge--letter-spacing: var(--tracking-display);
+
+  --text-badge-note: 0.625rem;
+  --text-badge-note--line-height: 1.5;
+  --text-badge-note--letter-spacing: var(--tracking-display);
+
+  --text-link: 1.125rem;
+  --text-link--line-height: calc(25 / 18);
+
+  --text-body: 0.9375rem;
+  --text-body--line-height: calc(5 / 3);
+
+  --container-page: 69.375rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-lexend-deca);
+  --font-display: var(--font-space-mono);
+}
+
+@layer base {
+  html {
+    overflow-y: scroll;
+  }
+
+  body {
+    @apply bg-white text-body text-muted;
+  }
+
+  source {
+    display: none;
+  }
+
+  a,
+  button {
+    @apply v-focus-ring;
+  }
+
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@utility v-focus-ring {
+  &:focus-visible {
+    @apply outline-2 outline-offset-4 outline-current;
+  }
+}
+
+@utility v-page {
+  @apply mx-auto w-full max-w-page px-8;
+
+  @variant md {
+    @apply px-10;
+  }
+}

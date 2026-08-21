@@ -8,7 +8,7 @@ import "./globals.css";
 
 const spaceMono = Space_Mono({
   variable: "--font-space-mono",
-  weight: ["400", "700"],
+  weight: ["700"],
   subsets: ["latin"],
   display: "swap",
 });
