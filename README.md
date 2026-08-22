@@ -37,12 +37,13 @@ This is a solution to the [Scoot multi-page website challenge on Frontend Mentor
 Accessibility fixes, each the smallest change that clears WCAG AA. Ratios measured by
 compositing on rounded 8-bit channels against the real backdrop.
 
-| Element                        | Design                 | Shipped   | Ratio         |
-| ------------------------------ | ---------------------- | --------- | ------------- |
-| Body copy, header nav          | `#939CAA` on white     | `#6C7789` | 2.77 -> 4.53  |
-| Footer nav links               | `#939CAA` on `#333A44` | `#9AA3B0` | 4.14 -> 4.50  |
-| Button label, tablet map pills | white on `#FCB72B`     | `#333A44` | 1.76 -> 6.53  |
-| Button hover label             | `#FCB72B` on white     | `#333A44` | 1.76 -> 11.48 |
+| Element               | Design                 | Shipped   | Ratio         |
+| --------------------- | ---------------------- | --------- | ------------- |
+| Body copy, header nav | `#939CAA` on white     | `#6C7789` | 2.77 -> 4.53  |
+| Footer nav links      | `#939CAA` on `#333A44` | `#9AA3B0` | 4.14 -> 4.50  |
+| Button label          | white on `#FCB72B`     | `#333A44` | 1.76 -> 6.53  |
+| Button hover label    | `#FCB72B` on white     | `#333A44` | 1.76 -> 11.48 |
+| Tablet map pin label  | `#495567` on `#FCB72B` | `#333A44` | 4.13 -> 6.53  |
 
 Yellow-on-white cannot be fixed without turning the brand colour brown, so the button's
 hover keeps the yellow border and swaps only the fill.
@@ -52,6 +53,8 @@ Documented and left as designed:
 - The yellow button fill against the white page is 1.76:1 and the yellow map dots against the
   light-grey map are 1.48:1. Both are non-text; every city name is real text beside its dot, so
   no information is carried by colour alone.
+- The map pins keep the design's `#495567` label at 24px, where 4.13:1 clears the 3:1 large-text
+  threshold. Only the 13px tablet pill needed the darker ink.
 - Tablet drops the map labels to 13px while mobile and desktop use 24px. Proportional to the
   map, and it clears 4.5:1.
 - The hero's yellow connector arrow is drawn from 1280px up. It is 452px wide and needs the gap
@@ -79,8 +82,16 @@ Documented and left as designed:
   ships open to match the drawn state.
 - At tablet the gap between a story panel's photo and its heading is 56px on three panels and
   64px on the other three. The build uses 56px everywhere; there is no majority to follow.
-- The careers openings list has no heading in the design. Added a visually hidden heading so the
-  section is named and the page's heading outline covers every block.
+- The careers openings list and the locations map have no heading in the design. Both got a
+  visually hidden one, so every section is named and the heading outline covers every block.
+- Map pins are hand-placed in the design and no two frames agree on where a city is. Each city
+  ships as one percentage of the map, so the pins track it at every width; the coordinates are
+  the mean of the tablet and desktop frames. Three of the four land within 2px of both; New York
+  is 7px out at 1440px and 4px at 768px, because those two frames disagree by 13px about it.
+- The locations page keeps the tablet stack until 1280px. Its desktop row puts the 48px heading
+  in a 350px column, which needs the container at its full 1110px width to hold two lines.
+- The mobile and tablet frames title-case "Your City Not Listed?" where the desktop frame and the
+  starter markup use sentence case. Shipped as the markup has it.
 - Six buttons all labelled `Apply` are indistinguishable to a screen reader out of context, so
   each one's accessible name is extended to `Apply for <role>` — the visible label is preserved
   inside it, as WCAG 2.5.3 requires.

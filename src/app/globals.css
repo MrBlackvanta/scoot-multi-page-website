@@ -8,7 +8,6 @@
   --color-light-grey: #e5ecf4;
   --color-snow: #f2f5f9;
   --color-light-yellow: #fff4df;
-  --color-pin: #f6faff;
   --color-veil: #2f3b59;
   --color-muted: #6c7789;
   --color-muted-inverse: #9aa3b0;
@@ -143,6 +142,10 @@
       transition: none;
     }
   }
+}
+
+@utility v-pin-tail {
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
 @utility v-summary {
