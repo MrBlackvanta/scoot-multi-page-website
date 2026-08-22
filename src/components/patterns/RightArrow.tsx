@@ -12,8 +12,8 @@ export default function RightArrow(props: React.SVGProps<SVGSVGElement>) {
       aria-hidden="true"
       {...props}
     >
-      <path d="M407.952 145.444l38.426-38.426-38.426-38.426" />
-      <path d="M0 8h270.115v99.369h176.263" />
+      <path pathLength={1} d="M0 8h270.115v99.369h176.263" />
+      <path pathLength={1} d="M407.952 145.444l38.426-38.426-38.426-38.426" />
     </svg>
   );
 }

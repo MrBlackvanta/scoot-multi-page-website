@@ -36,7 +36,7 @@ export default function Values({ title }: { title: string }) {
           className="flex flex-col gap-14 lg:grid lg:grid-cols-3 lg:gap-7.5"
         >
           {values.map(({ image, title, body }, index) => (
-            <li key={title} className="mx-auto max-w-114 text-center">
+            <li key={title} className="mx-auto max-w-114 v-reveal text-center">
               <div className="relative mx-auto mb-16 w-60 md:mb-22">
                 <img
                   src={image.src}

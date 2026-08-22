@@ -5,6 +5,15 @@ import { Values } from "@/components";
 import { DownloadCta, PageHero } from "@/components/layout";
 import { Intro, Openings } from "@/views/careers";
 
+import { pageMetadata } from "../site";
+
+export const metadata = pageMetadata({
+  title: "Careers",
+  description:
+    "Open roles at Scoot in New York, London, Jakarta and Yokohama — and why the people building urban mobility choose to do it here.",
+  path: "/careers",
+});
+
 export default function Careers() {
   return (
     <main className="flex-1">

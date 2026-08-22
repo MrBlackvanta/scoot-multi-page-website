@@ -24,7 +24,7 @@ export default function Openings() {
           {openings.map(({ role, location }) => (
             <li
               key={role}
-              className="flex min-h-47.5 flex-col items-center justify-center gap-4 bg-snow px-8 py-8 text-center md:min-h-32 md:flex-row md:justify-between md:gap-6 md:px-12 md:py-4 md:text-left lg:ps-10 lg:pe-16"
+              className="flex min-h-47.5 v-reveal flex-col items-center justify-center gap-4 bg-snow px-8 py-8 text-center md:min-h-32 md:flex-row md:justify-between md:gap-6 md:px-12 md:py-4 md:text-left lg:ps-10 lg:pe-16"
             >
               <div>
                 <h3 className="font-display text-item font-bold text-navy md:text-card">

@@ -24,7 +24,6 @@ export default function PageHero({ title, mobile, tablet, desktop }: Props) {
         fetchPriority="high"
         className="absolute inset-0 -z-20 size-full object-cover"
       />
-      <div className="absolute inset-0 -z-10 bg-veil/75" />
       <Circles className="absolute top-1/2 -right-8 -z-10 hidden -translate-y-1/2 text-white md:block" />
 
       <div className="v-page">

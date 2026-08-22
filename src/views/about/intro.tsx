@@ -26,8 +26,8 @@ export default function Intro() {
   return (
     <section className="relative isolate overflow-clip pt-18 md:pt-36 lg:pt-30">
       <div className="v-page flex flex-col gap-30">
-        {panels.map((panel) => (
-          <StoryPanel key={panel.title} {...panel} />
+        {panels.map((panel, index) => (
+          <StoryPanel key={panel.title} {...panel} reveal={index > 0} />
         ))}
       </div>
     </section>

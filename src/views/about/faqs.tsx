@@ -59,7 +59,10 @@ export default function Faqs() {
 
         <div className="flex flex-col gap-12 md:gap-16">
           {groups.map(({ title, items }) => (
-            <div key={title} className="lg:grid lg:grid-cols-3 lg:gap-7.5">
+            <div
+              key={title}
+              className="v-reveal lg:grid lg:grid-cols-3 lg:gap-7.5"
+            >
               <h3 className="mb-8 text-center font-display text-card font-bold text-navy md:text-group lg:mb-0 lg:text-left">
                 {title}
               </h3>

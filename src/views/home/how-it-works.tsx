@@ -29,7 +29,7 @@ export default function HowItWorks() {
               className="relative flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:gap-20 md:text-left lg:flex-col lg:items-start lg:gap-10"
             >
               <Icon className="size-14 shrink-0 md:size-24" />
-              <div>
+              <div className="v-reveal">
                 <h2 className="mb-6 font-display text-card-sm font-bold text-navy md:mb-7 md:text-card">
                   {title}
                 </h2>

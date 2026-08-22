@@ -14,8 +14,8 @@ export default function LeftDownwardArrow(
       aria-hidden="true"
       {...props}
     >
-      <path d="M740.969 8H182.854v99.369H6.591" />
-      <path d="M44.64 145.64L6.214 107.214 44.64 68.787" />
+      <path pathLength={1} d="M740.969 8H182.854v99.369H6.591" />
+      <path pathLength={1} d="M44.64 145.64L6.214 107.214 44.64 68.787" />
     </svg>
   );
 }

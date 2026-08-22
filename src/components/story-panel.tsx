@@ -16,6 +16,7 @@ type Props = {
   body: string;
   imageOn: keyof typeof sides;
   arrow: { turn: keyof typeof arrows; at: string };
+  reveal?: boolean;
   children?: React.ReactNode;
 };
 
@@ -25,6 +26,7 @@ export default function StoryPanel({
   body,
   imageOn,
   arrow,
+  reveal = true,
   children,
 }: Props) {
   const Arrow = arrows[arrow.turn];
@@ -52,9 +54,11 @@ export default function StoryPanel({
             sides[imageOn].backdrop,
           )}
         />
-        <Arrow className={cn("absolute text-yellow", arrow.at)} />
+        <Arrow
+          className={cn("absolute text-yellow", reveal && "v-draw", arrow.at)}
+        />
       </div>
-      <div className="text-center lg:text-left">
+      <div className={cn("text-center lg:text-left", reveal && "v-reveal")}>
         <h2 className="mx-auto mb-8 max-w-114 font-display text-section-sm font-bold text-navy md:mb-10 md:text-section lg:mx-0 lg:mb-6 lg:max-w-none">
           {title}
         </h2>

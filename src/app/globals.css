@@ -8,7 +8,6 @@
   --color-light-grey: #e5ecf4;
   --color-snow: #f2f5f9;
   --color-light-yellow: #fff4df;
-  --color-veil: #2f3b59;
   --color-muted: #6c7789;
   --color-muted-inverse: #9aa3b0;
 
@@ -93,6 +92,48 @@
 
   button:not(:disabled) {
     @apply cursor-pointer;
+  }
+}
+
+@keyframes v-reveal {
+  from {
+    translate: 0 1rem;
+  }
+}
+
+@keyframes v-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+@utility v-reveal {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      animation: v-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+  }
+}
+
+@utility v-draw {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      & path {
+        stroke-dasharray: 1;
+        animation: v-draw linear both;
+        animation-timeline: view();
+      }
+
+      & path:first-child {
+        animation-range: entry 10% entry 62%;
+      }
+
+      & path:last-child {
+        animation-range: entry 58% entry 74%;
+      }
+    }
   }
 }
 

@@ -55,6 +55,11 @@ Documented and left as designed:
   no information is carried by colour alone.
 - The map pins keep the design's `#495567` label at 24px, where 4.13:1 clears the 3:1 large-text
   threshold. Only the 13px tablet pill needed the darker ink.
+- Every hero frame draws a `#2F3B59` rectangle at 75% over its photo, but the photos Frontend
+  Mentor exports already carry that wash — sampling one gives no channel above 139. Applying it
+  again in CSS darkened all four heroes well past the design's own preview, so the overlay is not
+  in the build. White on the bare photo measures 4.77:1 under the 15px hero paragraph and
+  6.3–7.0:1 under the page headings, worst pixel in the box.
 - Tablet drops the map labels to 13px while mobile and desktop use 24px. Proportional to the
   map, and it clears 4.5:1.
 - The hero's yellow connector arrow is drawn from 1280px up. It is 452px wide and needs the gap
