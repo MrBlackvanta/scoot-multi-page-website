@@ -10,7 +10,7 @@ export default function Intro() {
           title="Care to join our mission?"
           body="We’re always looking for ambitious individuals to help us on our journey. If you’re passionate about our mission to provide clean, accessible transport to improve urban living we want to hear from you!"
           imageOn="right"
-          arrow={{ turn: "down", at: "-bottom-1.5 -left-1.5 md:-left-33" }}
+          arrowAt="-bottom-1.5 -left-1.5 md:-left-33"
           reveal={false}
         >
           <Button>Say Hello</Button>

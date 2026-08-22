@@ -9,24 +9,21 @@ const panels = [
     title: "Easy to use riding telemetry",
     body: "The Scoot app is available with riding telemetry. This means it can show you your average speed, how long you’ve been using the scooter, your traveling distance, and many more things all in an easy to use app.",
     imageOn: "right",
-    arrow: {
-      turn: "down",
-      at: "bottom-0.5 -left-2 md:bottom-auto md:top-75 md:-left-33",
-    },
+    arrowAt: "bottom-0.5 -left-2 md:bottom-auto md:top-75 md:-left-33",
   },
   {
     image: nearYou,
     title: "Coming to a city near you",
     body: "Scoot is available in 4 major cities so far. We’re expanding rapidly, so be sure to let us know if you want to see us in your hometown. We’re aiming to let our scooters loose on 23 cities over the coming year.",
     imageOn: "left",
-    arrow: { turn: "down", at: "-top-2 left-56 md:-top-8 md:left-45" },
+    arrowAt: "-top-2 left-56 md:-top-8 md:left-45",
   },
   {
     image: payments,
     title: "Zero hassle payments",
     body: "Our payment is as easy as one two three. We accept most credit cards and debit cards. You can also link your PayPal account inside the app. Need to pay later? No worries! You can defer payment for up to a month.",
     imageOn: "right",
-    arrow: { turn: "down", at: "top-0 left-31 md:top-19 md:left-62" },
+    arrowAt: "top-0 left-31 md:top-19 md:left-62",
   },
 ] as const;
 

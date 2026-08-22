@@ -8,17 +8,14 @@ const panels = [
     title: "Mobility for the digital era",
     body: "Getting around should be simple (and even fun!) for everyone. We embrace technology to provide low cost, smart access to scooters at your fingertips.",
     imageOn: "right",
-    arrow: {
-      turn: "down",
-      at: "bottom-0.5 -left-2 md:bottom-auto md:top-75 md:-left-33",
-    },
+    arrowAt: "bottom-0.5 -left-2 md:bottom-auto md:top-75 md:-left-33",
   },
   {
     image: betterLiving,
     title: "Better urban living",
     body: "We’re helping connect cities and bring people closer together. Our scooters are also fully-electric and we offset the minimal carbon footprint for each ride.",
     imageOn: "left",
-    arrow: { turn: "down", at: "-top-2 left-76 md:top-0 md:left-45" },
+    arrowAt: "-top-2 left-76 md:top-0 md:left-45",
   },
 ] as const;
 

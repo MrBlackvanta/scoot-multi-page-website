@@ -102,6 +102,9 @@ Documented and left as designed:
   inside it, as WCAG 2.5.3 requires.
 - The openings rows are drawn at a fixed 190px (mobile) and 128px height. Shipped as a minimum
   height, so a role title that wraps below 375px grows its row instead of overflowing it.
+- The design gives no destination to `Learn More`, `Say Hello`, `Apply` or `Message Us`, and the
+  challenge has no contact route, so all eleven are buttons that do nothing. They are focusable and
+  correctly labelled; wiring them would mean inventing routes the brief does not have.
 - Focus rings and the reduced-motion path are not in the design file.
 - The Frontend Mentor attribution makes the mobile footer taller than the 438px drawn.
 

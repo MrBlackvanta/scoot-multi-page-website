@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
 
-import { LeftDownwardArrow, LeftUpwardArrow } from "@/components/patterns";
+import { LeftDownwardArrow } from "@/components/patterns";
 import { cn } from "@/lib";
 
 const sides = {
@@ -8,14 +8,12 @@ const sides = {
   left: { column: "", backdrop: "right-full me-16" },
 };
 
-const arrows = { down: LeftDownwardArrow, up: LeftUpwardArrow };
-
 type Props = {
   image: StaticImageData;
   title: string;
   body: string;
   imageOn: keyof typeof sides;
-  arrow: { turn: keyof typeof arrows; at: string };
+  arrowAt: string;
   reveal?: boolean;
   children?: React.ReactNode;
 };
@@ -25,12 +23,10 @@ export default function StoryPanel({
   title,
   body,
   imageOn,
-  arrow,
+  arrowAt,
   reveal = true,
   children,
 }: Props) {
-  const Arrow = arrows[arrow.turn];
-
   return (
     <div className="flex flex-col gap-14 lg:grid lg:grid-cols-2 lg:items-center lg:gap-55">
       <div
@@ -54,8 +50,8 @@ export default function StoryPanel({
             sides[imageOn].backdrop,
           )}
         />
-        <Arrow
-          className={cn("absolute text-yellow", reveal && "v-draw", arrow.at)}
+        <LeftDownwardArrow
+          className={cn("absolute text-yellow", reveal && "v-draw", arrowAt)}
         />
       </div>
       <div className={cn("text-center lg:text-left", reveal && "v-reveal")}>

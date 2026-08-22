@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { cn } from "@/lib";
 
 type Tone = "light" | "dark";
@@ -25,19 +23,6 @@ export default function Button({
     >
       {children}
     </button>
-  );
-}
-
-export function ButtonLink({
-  tone = "light",
-  className,
-  children,
-  ...props
-}: OwnProps & React.ComponentPropsWithoutRef<typeof Link>) {
-  return (
-    <Link className={cn("v-btn", tones[tone], className)} {...props}>
-      {children}
-    </Link>
   );
 }
 
