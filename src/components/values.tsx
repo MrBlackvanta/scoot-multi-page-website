@@ -20,7 +20,7 @@ const values = [
   },
 ];
 
-export default function Values() {
+export default function Values({ title }: { title: string }) {
   return (
     <section aria-labelledby="values-heading" className="pt-30">
       <div className="v-page">
@@ -28,7 +28,7 @@ export default function Values() {
           id="values-heading"
           className="mb-16 text-center font-display text-section-sm font-bold text-navy md:mb-26 md:text-section"
         >
-          Our values
+          {title}
         </h2>
 
         <ol

@@ -37,12 +37,12 @@ This is a solution to the [Scoot multi-page website challenge on Frontend Mentor
 Accessibility fixes, each the smallest change that clears WCAG AA. Ratios measured by
 compositing on rounded 8-bit channels against the real backdrop.
 
-| Element | Design | Shipped | Ratio |
-| --- | --- | --- | --- |
-| Body copy, header nav | `#939CAA` on white | `#6C7789` | 2.77 -> 4.53 |
-| Footer nav links | `#939CAA` on `#333A44` | `#9AA3B0` | 4.14 -> 4.50 |
-| Button label, tablet map pills | white on `#FCB72B` | `#333A44` | 1.76 -> 6.53 |
-| Button hover label | `#FCB72B` on white | `#333A44` | 1.76 -> 11.48 |
+| Element                        | Design                 | Shipped   | Ratio         |
+| ------------------------------ | ---------------------- | --------- | ------------- |
+| Body copy, header nav          | `#939CAA` on white     | `#6C7789` | 2.77 -> 4.53  |
+| Footer nav links               | `#939CAA` on `#333A44` | `#9AA3B0` | 4.14 -> 4.50  |
+| Button label, tablet map pills | white on `#FCB72B`     | `#333A44` | 1.76 -> 6.53  |
+| Button hover label             | `#FCB72B` on white     | `#333A44` | 1.76 -> 11.48 |
 
 Yellow-on-white cannot be fixed without turning the brand colour brown, so the button's
 hover keeps the yellow border and swaps only the fill.
@@ -77,6 +77,15 @@ Documented and left as designed:
 - The design shows one FAQ row open per group. Built as independent disclosures rather than an
   exclusive accordion, so opening one answer never hides another; the first row of each group
   ships open to match the drawn state.
+- At tablet the gap between a story panel's photo and its heading is 56px on three panels and
+  64px on the other three. The build uses 56px everywhere; there is no majority to follow.
+- The careers openings list has no heading in the design. Added a visually hidden heading so the
+  section is named and the page's heading outline covers every block.
+- Six buttons all labelled `Apply` are indistinguishable to a screen reader out of context, so
+  each one's accessible name is extended to `Apply for <role>` — the visible label is preserved
+  inside it, as WCAG 2.5.3 requires.
+- The openings rows are drawn at a fixed 190px (mobile) and 128px height. Shipped as a minimum
+  height, so a role title that wraps below 375px grows its row instead of overflowing it.
 - Focus rings and the reduced-motion path are not in the design file.
 - The Frontend Mentor attribution makes the mobile footer taller than the 438px drawn.
 
