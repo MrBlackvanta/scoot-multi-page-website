@@ -5,7 +5,7 @@ import { pageMetadata } from "./site";
 
 export const metadata = pageMetadata({
   description:
-    "Scooter sharing made simple. Locate the nearest Scoot with the app, unlock it with a tap, and ride away — a Frontend Mentor build in Next.js and Tailwind CSS.",
+    "Scooter sharing made simple. Locate the nearest Scoot with the app, unlock it with a tap, and ride away. Now in four cities.",
   path: "/",
 });
 

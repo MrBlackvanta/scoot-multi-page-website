@@ -10,7 +10,7 @@ import { pageMetadata } from "../site";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "How Scoot works, what we stand for, and answers to the questions riders ask most — from helmets and licences to finding a scooter near you.",
+    "How Scoot works, what we stand for, and answers to the questions riders ask most: helmets, licences, and finding a scooter near you.",
   path: "/about",
 });
 

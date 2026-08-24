@@ -10,7 +10,7 @@ import { pageMetadata } from "../site";
 export const metadata = pageMetadata({
   title: "Careers",
   description:
-    "Open roles at Scoot in New York, London, Jakarta and Yokohama — and why the people building urban mobility choose to do it here.",
+    "Open roles at Scoot in New York, London, Jakarta and Yokohama, and why the people building urban mobility choose to do it here.",
   path: "/careers",
 });
 

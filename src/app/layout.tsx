@@ -3,7 +3,7 @@ import { SiteFooter, SiteHeader } from "@/components/layout";
 import type { Metadata, Viewport } from "next";
 import { Lexend_Deca, Space_Mono } from "next/font/google";
 
-import { siteUrl } from "./site";
+import { openGraphBase, siteTitle, siteUrl } from "./site";
 
 import "./globals.css";
 
@@ -21,25 +21,19 @@ const lexendDeca = Lexend_Deca({
   display: "swap",
 });
 
-const title = "Scoot — Scooter sharing made simple";
 const description =
-  "Scoot takes the hassle out of urban mobility. Locate the nearest scooter with the app, unlock it with a tap, and you're away — a Frontend Mentor challenge built with Next.js, TypeScript and Tailwind CSS.";
+  "Locate the nearest scooter with the app, unlock it with a tap, and ride away. Scoot runs in New York, London, Jakarta and Yokohama.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: title, template: "%s — Scoot" },
+  title: { default: siteTitle, template: "%s | Scoot" },
   description,
-  openGraph: {
-    title,
-    description,
-    siteName: "Scoot",
-    locale: "en_US",
-    type: "website",
-  },
+  openGraph: { ...openGraphBase, title: siteTitle, description },
   twitter: {
-    card: "summary",
-    title,
+    card: "summary_large_image",
+    title: siteTitle,
     description,
+    images: openGraphBase.images,
   },
 };
 
